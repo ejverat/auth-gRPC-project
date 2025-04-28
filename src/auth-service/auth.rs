@@ -93,7 +93,7 @@ impl Auth for AuthService {
             .users_service
             .lock()
             .expect("Lock should not be poisoned")
-            .create_user(req.username.clone(), req.username.clone());
+            .create_user(req.username.clone(), req.password.clone());
 
         match result {
             Ok(_) => {
